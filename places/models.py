@@ -1,12 +1,16 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Place(models.Model):
+    user = models.ForeignKey(to=User, 
+    on_delete=models.SET_NULL,
+    null=True, blank=True
+    )
     name = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
-    description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    description = models.TextField(null=True, blank=True) #не обязвтельное поле
+    created_at = models.DateTimeField(auto_now_add=True)  
     update_at = models.DateTimeField(auto_now=True)
     views_count = models.IntegerField(default=0)
     is_publicated = models.BooleanField(default=True)
