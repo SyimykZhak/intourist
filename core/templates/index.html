@@ -7,9 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 >Список всех мест</h2>
-    {% for place in placess %}
-        <div>{{place.name}} - {{place.location}}-{{place.description}}</div>
-    {% endfor %}
+    <h3>Добро пожаловать {{request.user.username}}</h3>
+    <div>Вот ваша профиль: ENTER</div>
 </body>
 </html>

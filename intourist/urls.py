@@ -20,4 +20,5 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('places/', include('places.urls')), #с помощью include мы путь отправляем в places приложение 
+    path('', include('core.urls')),
 ]
