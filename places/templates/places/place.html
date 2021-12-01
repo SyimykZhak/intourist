@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+    <h3>{{place_object.name}}</h3>
+   <h5> {{place_object.location}}</h5>
+    <div> {{place_object.description}}</div>
+    <hr>
+   <div> Просмотров: {{place_object.views_count}}</div>
+
+
+
+   <div style="margin:20px 0px;"> <a class="btn btn-lg btn-warning" href="{% url 'edit-place' place_object.id %}">изменить</a>
+    <a class="btn btn-lg btn-danger" href="{% url 'delete-place' place_object.id %}">удалить</a></div>
+{% endblock %}
